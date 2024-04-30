@@ -1,0 +1,18 @@
+{
+  "name": "fullstack_blog_app_api",
+  "version": "1.0.0",
+  "description": "Fullstack blog api - MERN",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "j2dev",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2"
+  }
+}
