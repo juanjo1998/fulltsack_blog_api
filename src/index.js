@@ -1,6 +1,7 @@
 import app from "./app.js";
-import { dbConnect } from "./database/database.js";
+import colors from "colors";
 import dotenv from "dotenv";
+import { dbConnect } from "./database/database.js";
 dotenv.config();
 
 // database connection
@@ -13,4 +14,4 @@ const PORT = process.env.PORT;
 
 // port
 
-app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`.bgBlue));

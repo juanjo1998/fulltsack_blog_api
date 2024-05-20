@@ -1,1 +1,1 @@
-export { register, login } from "./RegisterController.js";
+export * from "./AuthController.js";

@@ -1,13 +1,19 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { register, login } from "../../controllers/auth/index.js";
-import { validateFields } from "../../middlewares/index.js";
+import {
+  register,
+  login,
+  logout,
+  profile,
+  verifyToken,
+} from "../../controllers/auth/index.js";
+import { validateFields, authRequired } from "../../middlewares/index.js";
 import { uniqueUser } from "../../helpers/index.js";
 
 const router = Router();
 
 router.post(
-  "/register",
+  "/api/register",
   [
     check("username", "The username field is required.").notEmpty(),
     check(
@@ -25,7 +31,7 @@ router.post(
 );
 
 router.post(
-  "/login",
+  "/api/login",
   [
     check("username", "The username field is required.").notEmpty(),
     check(
@@ -40,5 +46,11 @@ router.post(
   ],
   login
 );
+
+router.post("/api/logout", logout);
+
+router.get("/api/profile", authRequired, profile);
+
+router.get("/api/verify-token", authRequired, verifyToken);
 
 export default router;

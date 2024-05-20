@@ -5,7 +5,7 @@ export const dbConnect = async () => {
     const uri = process.env.MONGODB_CNN;
 
     await mongoose.connect(uri);
-    console.log("DATABASE CONNECTED.");
+    console.log("DATABASE CONNECTED.".bgMagenta);
   } catch (error) {
     console.log(error);
   }
